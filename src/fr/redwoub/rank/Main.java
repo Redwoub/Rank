@@ -1,12 +1,10 @@
 package fr.redwoub.rank;
 
-import fr.redwoub.rank.commands.SetRankCMD;
 import fr.redwoub.rank.database.MySQL;
-import fr.redwoub.rank.manager.PlayerJoin;
-import fr.redwoub.rank.manager.PlayerManager;
 import fr.redwoub.rank.manager.Register;
 import fr.redwoub.rank.rank.Accouts;
 import fr.redwoub.rank.scoreboard.ScoreboardManager;
+import fr.redwoub.rank.tablist.TabList;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.util.ArrayList;
@@ -38,6 +36,7 @@ public class Main extends JavaPlugin{
         mySQL.createTables();
         accouts = new ArrayList<>();
         Register.register();
+        TabList.createTablist();
 
         scheduledExecutorService = Executors.newScheduledThreadPool(16);
         executorMonoThread = Executors.newScheduledThreadPool(1);
