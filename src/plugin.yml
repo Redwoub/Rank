@@ -1,0 +1,17 @@
+name: Rank
+version: 1.0
+author: Redwoub
+main: fr.redwoub.rank.Main
+commands:
+  setrank:
+    permission: rank.setrank
+    permission-message: §cVous n'avez pas la permission d'executer cette commande
+  setcoins:
+    permission: rank.setcoins
+    permission-message: §cVous n'avez pas la permission d'executer cette commande
+  addcoins:
+    permission: rank.addcoins
+    permission-message: §cVous n'avez pas la permission d'executer cette commande
+  removecoins:
+    permission: rank.removecoins
+    permission-message: §cVous n'avez pas la permission d'executer cette commande
