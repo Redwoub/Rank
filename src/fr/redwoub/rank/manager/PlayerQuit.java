@@ -17,12 +17,12 @@ public class PlayerQuit implements Listener {
 
         try {
             PreparedStatement sts = Main.getInstance().getMySQL().getConnection().prepareStatement("UPDATE players_info SET grade=? WHERE uuid=?");
-            sts.setString(1, Main.getInstance().rankjoueurs.get(player));
+            sts.setString(1, Main.getInstance().rankJoueurs.get(player));
             sts.setString(2, player.getUniqueId().toString());
             sts.executeUpdate();
 
             PreparedStatement sts2 = Main.getInstance().getMySQL().getConnection().prepareStatement("UPDATE players_info SET coins=? WHERE uuid=?");
-            sts2.setLong(1, Main.getInstance().coinjoueurs.get(player));
+            sts2.setLong(1, Main.getInstance().coinsJoueurs.get(player));
             sts2.setString(2, player.getUniqueId().toString());
             sts2.executeUpdate();
         } catch (SQLException e) {

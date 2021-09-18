@@ -18,9 +18,9 @@ public class Main extends JavaPlugin{
     private static Main instance;
     private MySQL mySQL = new MySQL();
 
-    public WeakHashMap<Player, String> rankjoueurs = new WeakHashMap<>();
-    public WeakHashMap<Player, Long> coinjoueurs = new WeakHashMap<>();
-
+    public WeakHashMap<Player, String> rankJoueurs = new WeakHashMap<>();
+    public WeakHashMap<Player, Long> coinsJoueurs = new WeakHashMap<>();
+    public WeakHashMap<Player, String> prefixRank = new WeakHashMap<>();
     private List<Accouts> accouts;
 
     private ScoreboardManager scoreboardManager;
@@ -32,7 +32,7 @@ public class Main extends JavaPlugin{
     @Override
     public void onEnable() {
         instance = this;
-        mySQL.connected("localhost", 3306, "mydoria", "root", "");
+        mySQL.connected("154.52.40.25", 3306, "s5695_Mydoria", "u5695_1dWebKgsp2", "Ykq6X07sXwnedLKYNXcg");
         mySQL.createTables();
         accouts = new ArrayList<>();
         Register.register();

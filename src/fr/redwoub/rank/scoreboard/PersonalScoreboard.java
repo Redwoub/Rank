@@ -30,12 +30,13 @@ public class PersonalScoreboard {
         objectiveSign.setDisplayName("§eMydoria");
 
         objectiveSign.setLine(0, "§1");
-        objectiveSign.setLine(1, "§fGrade : §6" + Main.getInstance().rankjoueurs.get(player));
+        objectiveSign.setLine(1, "§fGrade : " + Players.getPrefix(player));
         objectiveSign.setLine(2, "§fCoins : §6" + Players.getCoins(player));
         objectiveSign.setLine(3, "§3");
         objectiveSign.setLine(4, "§fJoueurs : §a" + Bukkit.getOnlinePlayers().size() + "/250");
-        objectiveSign.setLine(5, "§4");
-        objectiveSign.setLine(6, ip);
+        objectiveSign.setLine(5, "§fMonde : §a" + player.getWorld().getName());
+        objectiveSign.setLine(6, "§4");
+        objectiveSign.setLine(7, ip);
 
         objectiveSign.updateLines();
     }

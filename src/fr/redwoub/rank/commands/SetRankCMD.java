@@ -22,7 +22,7 @@ public class SetRankCMD implements CommandExecutor {
         Player player = (Player) sender;
         if(args.length < 2){
             player.sendMessage(prefix + " §cErreur §8: §e/setrank <Pseudo du joueur> <rank>");
-            player.sendMessage(prefix + " §cErreur §8: §fLes ranks sont : §7Joueur, §eVip, §bMvp, §2Support, §3Builder, §9Moderateur, §6Developper, §cAdministrateur");
+            player.sendMessage(prefix + " §cErreur §8: §fLes ranks sont : §7Joueur, §eVip, §bMvp, §cYoutu§fbeur, §2Support, §3Builder, §9Moderateur, §6Developpeur, §4Administrateur");
             return false;
         }
 
@@ -34,12 +34,11 @@ public class SetRankCMD implements CommandExecutor {
         Player target = Bukkit.getPlayer(args[0]);
 
         Accouts accouts = new Accouts(target);
-
-        RankUnit rank = RankUnit.valueOf(args[1].toUpperCase());
-
+        RankUnit rankUnit = RankUnit.valueOf(args[1].toUpperCase());
         Players.updateRank(player, args[1]);
-        accouts.setRank(rank);
-        player.sendMessage("§aVous avez bien changer le rank de " + target.getName() + " en : §e " + rank);
+        accouts.setRank(rankUnit);
+        Players.updatePrefix(player);
+        player.sendMessage("§aVous avez bien changer le rank de " + target.getName() + " en : §e " + args[1]);
         return false;
     }
 }

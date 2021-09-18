@@ -22,7 +22,7 @@ public class PlayerJoin implements Listener {
         Player player = e.getPlayer();
         Accouts accouts = new Accouts(player);
         accouts.setup();
-        if(accouts.getRank().getPower() <= RankUnit.MODERATEUR.getPower()){
+        if(accouts.getRank().getPower() <= RankUnit.YOUTUBEUR.getPower()){
             e.setJoinMessage(accouts.getRank().getPrefix() + player.getName() + " §fvient de rejoindre le serveur !");
 
         } else {
@@ -38,13 +38,14 @@ public class PlayerJoin implements Listener {
             sts.setString(1, player.getUniqueId().toString());
             ResultSet rs = sts.executeQuery();
             if(rs.next()){
-                Main.getInstance().rankjoueurs.put(player, rs.getString("grade"));
-                Main.getInstance().coinjoueurs.put(player, rs.getLong("coins"));
+                Main.getInstance().rankJoueurs.put(player, rs.getString("grade"));
+                Main.getInstance().coinsJoueurs.put(player, rs.getLong("coins"));
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
 
+        Main.getInstance().prefixRank.put(player, Accouts.getAccount(player).getRank().getPrefix());
     }
 
 }

@@ -1,22 +1,20 @@
 package fr.redwoub.rank.rank;
 
-import fr.redwoub.rank.Main;
 import org.bukkit.ChatColor;
-import org.bukkit.entity.Player;
 
 import java.util.Arrays;
 
 public enum RankUnit {
 
-    JOUEUR("Joueur", 8, "§7", ChatColor.GRAY),
-    VIP("VIP", 7, "§eVIP ", ChatColor.YELLOW),
-    MVP("MVP", 6, "§4Yout§fuber ", ChatColor.DARK_RED),
-    YOUTUBER("YOUTUBER", 5, "§bMVP ", ChatColor.AQUA),
-    SUPPORT("SUPPORT", 4, "§2Support ", ChatColor.DARK_GREEN),
-    BUILDER("BUILDER", 3, "§3Builder ", ChatColor.DARK_BLUE),
-    MODERATEUR("MODERATEUR", 2, "§9Modérateur ", ChatColor.BLUE),
-    DEVELOPPER("DEVELOPPER", 1, "§6Developper ", ChatColor.GOLD),
-    ADMINISTRATEUR("ADMINISTRATEUR", 0, "§4Administrateur ", ChatColor.DARK_RED);
+    JOUEUR("Joueur", 8, "§7[Joueur] ", ChatColor.GRAY),
+    VIP("VIP", 7, "§7[§eVIP§7]§e ", ChatColor.YELLOW),
+    MVP("MVP", 6, "§7[§bMVP§7]§b ", ChatColor.AQUA),
+    YOUTUBEUR("YOUTUBEUR", 5, "§7[§cYoutu§fbeur§7]§f ", ChatColor.RED),
+    SUPPORT("SUPPORT", 4, "§7[§2Support§7]§2 ", ChatColor.DARK_GREEN),
+    BUILDER("BUILDER", 3, "§7[§3Builder§7]§3 ", ChatColor.DARK_AQUA),
+    MODERATEUR("MODERATEUR", 2, "§7[§9Modérateur§7]§9 ", ChatColor.BLUE),
+    DEVELOPPEUR("DEVELOPPEUR", 1, "§7[§6Developpeur§7]§6 ", ChatColor.GOLD),
+    ADMINISTRATEUR("ADMINISTRATEUR", 0, "§7[§4Administrateur§7]§4 ", ChatColor.DARK_RED);
 
 
     private String name;
@@ -52,5 +50,8 @@ public enum RankUnit {
         return prefix;
     }
 
+    public ChatColor getChatColor(){
+        return chatColor;
+    }
 
 }

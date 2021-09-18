@@ -1,6 +1,8 @@
 package fr.redwoub.rank.rank;
 
 import fr.redwoub.rank.Main;
+import fr.redwoub.rank.database.MySQL;
+import fr.redwoub.rank.utils.Players;
 import org.bukkit.entity.Player;
 import java.sql.SQLException;
 
@@ -50,8 +52,9 @@ public class Accouts {
         });
     }
 
-    public void setRank(RankUnit rankUnit){
-        Main.getInstance().getMySQL().update("UPDATE " +  TABLE + " SET grade='" + rankUnit + "' WHERE uuid='" + uuid + "'");
+    public void setRank(RankUnit rankName){
+        Players.updateRank(player, String.valueOf(rankName));
+        Main.getInstance().getMySQL().update("UPDATE " +  TABLE + " SET grade='" + rankName + "' WHERE uuid='" + uuid + "'");
     }
 
     public void delete(){
