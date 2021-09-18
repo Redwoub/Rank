@@ -4,7 +4,6 @@ package fr.redwoub.rank.manager;
 import fr.redwoub.rank.Main;
 import fr.redwoub.rank.rank.Accouts;
 import fr.redwoub.rank.rank.RankUnit;
-import fr.redwoub.rank.utils.Players;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -25,7 +24,7 @@ public class PlayerManager implements Listener {
         RankUnit rankUnit = Accouts.getAccount(player).getRank();
         Accouts accouts = new Accouts(player);
 
-        event.setFormat(rankUnit.getPrefix() + "%1$s §7> " + (rankUnit == RankUnit.JOUEUR ? "§7" : "§f" + "%2$s"));
+        event.setFormat(rankUnit.getPrefix() + "%1$s §7> §f%2$s");
     }
 
     @EventHandler
@@ -55,7 +54,6 @@ public class PlayerManager implements Listener {
 
         }
     }
-
 }
 
 

@@ -6,8 +6,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-public class TabList implements Listener {
+public class TabListName implements Listener {
 
+
+    /*
     private static String rankByPlayer(Player player){
         return Main.getInstance().rankJoueurs.get(player);
     }
@@ -15,7 +17,6 @@ public class TabList implements Listener {
     public static void createTablist(){
 
         Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getInstance(), new Runnable() {
-
             @Override
             public void run() {
                 for(Player players : Bukkit.getOnlinePlayers()){
@@ -44,4 +45,7 @@ public class TabList implements Listener {
             }
         }, 1, 10);
     }
+
+     */
+
 }

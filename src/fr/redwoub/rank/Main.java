@@ -4,7 +4,7 @@ import fr.redwoub.rank.database.MySQL;
 import fr.redwoub.rank.manager.Register;
 import fr.redwoub.rank.rank.Accouts;
 import fr.redwoub.rank.scoreboard.ScoreboardManager;
-import fr.redwoub.rank.tablist.TabList;
+import fr.redwoub.rank.tablist.TabListName;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.util.ArrayList;
@@ -32,11 +32,10 @@ public class Main extends JavaPlugin{
     @Override
     public void onEnable() {
         instance = this;
-        mySQL.connected("154.52.40.25", 3306, "s5695_Mydoria", "u5695_1dWebKgsp2", "Ykq6X07sXwnedLKYNXcg");
+        mySQL.connected("178.32.113.35", 3306, "minesr_106164", "minesr_106164", "B9fgSTEn");
         mySQL.createTables();
         accouts = new ArrayList<>();
         Register.register();
-        TabList.createTablist();
 
         scheduledExecutorService = Executors.newScheduledThreadPool(16);
         executorMonoThread = Executors.newScheduledThreadPool(1);
